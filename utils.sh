@@ -45,4 +45,9 @@ pong () {
     sudo tcpdump -i ${1:-tun0} -n ${2:-icmp}
 }
 
+# basic revshell listener
+# TODO: incorporate rlwrap
+catch () {
+    nc -lvnp ${1:-9001}
+}
 
