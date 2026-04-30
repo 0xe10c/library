@@ -38,3 +38,11 @@ function grh () {
 function urlencode() {
 	echo -n $1 | jq -sRr @uri
 }
+
+# ICMP visibility - ping pong. get it?
+# usage: pong [iface] [filter string]
+pong () {
+    sudo tcpdump -i ${1:-tun0} -n ${2:-icmp}
+}
+
+
